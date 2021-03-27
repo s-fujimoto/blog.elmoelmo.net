@@ -1,5 +1,5 @@
 {
-  "name": "cdk",
+  "name": "elmoelmo-blog",
   "version": "0.1.0",
   "bin": {
     "cdk": "bin/cdk.js"
@@ -21,6 +21,7 @@
     "typescript": "~3.9.7"
   },
   "dependencies": {
+    "@aws-cdk/aws-s3": "^1.95.1",
     "@aws-cdk/core": "1.95.1",
     "source-map-support": "^0.5.16"
   }

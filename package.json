@@ -4,12 +4,16 @@
   "description": "A starter for a blog powered by Gatsby and Markdown",
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "engines": {
+    "node": "12.x"
+  },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "dependencies": {
     "@aws-cdk/aws-amplify": "^1.95.1",
     "gatsby": "^3.1.1",
+    "gatsby-plugin-algolia": "^0.17.0",
     "gatsby-plugin-feed": "^3.1.0",
     "gatsby-plugin-gatsby-cloud": "^2.1.0",
     "gatsby-plugin-google-analytics": "^3.1.0",

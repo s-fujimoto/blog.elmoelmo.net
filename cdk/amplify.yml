@@ -1,11 +1,16 @@
 version: 1
 frontend:
+  env:
+    variables:
+      SECRET_MANAGER_KEY_ID_SUFFIX: blog.elmoelmo.net/amplify
   phases:
     preBuild:
       commands:
         - yarn install
     build:
       commands:
+        - GATSBY_ALGOLIA_APP_ID=$(aws secretsmanager get-secret-value --secret-id ${ENV}/${SECRET_MANAGER_KEY_ID_SUFFIX} |jq -r ".SecretString" |jq .ALGOLIA_ADMIN_API_KEY)
+        - ALGOLIA_ADMIN_KEY=$(aws secretsmanager get-secret-value --secret-id ${ENV}/${SECRET_MANAGER_KEY_ID_SUFFIX} |jq -r ".SecretString" |jq .ALGOLIA_APPLICATION_ID)
         - yarn run build
   artifacts:
     baseDirectory: public

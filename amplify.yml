@@ -7,12 +7,6 @@ frontend:
         - yarn install
     build:
       commands:
-        # - aws secretsmanager get-secret-value --secret-id ${BUILD_SECRETS_MANAGER_KEY_ID} |jq -r ".SecretString" |jq -r .ALGOLIA_APPLICATION_ID
-        # - aws secretsmanager get-secret-value --secret-id ${BUILD_SECRETS_MANAGER_KEY_ID} |jq -r ".SecretString" |jq -r .ALGOLIA_ADMIN_API_KEY
-        - aws secretsmanager get-secret-value --secret-id ${BUILD_SECRETS_MANAGER_KEY_ID}
-        - aws secretsmanager get-secret-value --secret-id ${BUILD_SECRETS_MANAGER_KEY_ID} |jq -r ".SecretString" |jq -r .TEST_VALUE
-        - export TEST_VALUE=$(aws secretsmanager get-secret-value --secret-id ${BUILD_SECRETS_MANAGER_KEY_ID} |jq -r ".SecretString" |jq -r .ALGOLIA_ADMIN_API_KEY)
-        - echo ${TEST_VALUE}
         - yarn run build
   artifacts:
     baseDirectory: public

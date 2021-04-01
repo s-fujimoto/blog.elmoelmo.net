@@ -14,6 +14,7 @@
     "@aws-cdk/aws-amplify": "^1.95.1",
     "@styled-icons/fa-solid": "^10.26.0",
     "algoliasearch": "^4.8.6",
+    "babel-preset-gatsby": "^1.2.0",
     "gatsby": "^3.1.1",
     "gatsby-plugin-algolia": "^0.17.0",
     "gatsby-plugin-feed": "^3.1.0",
@@ -44,6 +45,12 @@
     "typeface-montserrat": "0.0.75"
   },
   "devDependencies": {
+    "@babel/core": "^7.13.14",
+    "@storybook/addon-actions": "^6.2.1",
+    "@storybook/addon-essentials": "^6.2.1",
+    "@storybook/addon-links": "^6.2.1",
+    "@storybook/react": "^6.2.1",
+    "babel-loader": "^8.2.2",
     "prettier": "2.2.1"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
@@ -63,6 +70,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   }
 }

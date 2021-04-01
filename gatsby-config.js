@@ -5,11 +5,12 @@ module.exports = {
       name: `えるも`,
       summary: `からあげおいしい`,
     },
-    description: `明日の自分の方が強い。積み重ねる。`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    description: `明日の自分を強くする。少しづつ積み重ねる。`,
+    siteUrl: `https://blog.elmoelmo.net/`,
     social: {
       twitter: `a04316`,
     },
+    icon: `src/images/chiri.png`,
   },
   plugins: [
     `gatsby-plugin-image`,
@@ -129,13 +130,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `チリツモ`,
+        short_name: `チリツモ`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/chiri.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-react-helmet`,

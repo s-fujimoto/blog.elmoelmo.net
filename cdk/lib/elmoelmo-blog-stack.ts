@@ -16,16 +16,14 @@ export class ElmoelmoBlogStack extends cdk.Stack {
       }),
     });
     const masterBranch = amplifyApp.addBranch("master");
-    
-    // new amplify.CfnDomain(this, "elmoelmo-blog-app-domain", {
-    //   appId: amplifyApp.appId,
-    //   domainName: "elmoelmo.net",
-    //   subDomainSettings: [
-    //     {
-    //       branchName: "master",
-    //       prefix: "blog",
-    //     }
-    //   ],
-    // })
+
+    amplifyApp.addDomain("elmoelmo.net", {
+      subDomains: [
+        {
+          branch: masterBranch,
+          prefix: "blog"
+        }
+      ]
+    })
   }
 }

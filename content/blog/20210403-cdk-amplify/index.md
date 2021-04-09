@@ -92,4 +92,4 @@ Amplify App が作られるとそのままビルドが動作し、待てば公�
 Web ブラウザを起動し、登録したドメインの URL にアクセスする。
 今回であれば `https://blog.elmoelmo.net/` にアクセスする。
 
-![ブログトップページ]](./images/blogelmoelmonet.png)
+![blog top page](./images/blogelmoelmonet.png)

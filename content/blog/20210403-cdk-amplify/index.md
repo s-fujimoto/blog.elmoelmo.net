@@ -1,6 +1,6 @@
 ---
 title: AWS Amplify にブログをデプロイする
-date: "2021-04-01T12:00:05Z"
+date: "2021-04-06T12:00:05Z"
 description: AWS CDK で AWS Amplify にブログをデプロイする
 ---
 

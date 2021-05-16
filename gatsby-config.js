@@ -13,6 +13,7 @@ module.exports = {
     icon: `src/images/chiri.png`,
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-image`,
     `gatsby-plugin-styled-components`,
     {

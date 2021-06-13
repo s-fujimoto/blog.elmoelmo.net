@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components"
-import SearchBox from "./search-box"
+import ConnectedSearchBox from "./search-box"
 
 const open = css`
   width: 10em;
@@ -17,7 +17,7 @@ const closed = css`
   padding-left: 1em;
 `
 
-export default styled(SearchBox)`
+export default styled(ConnectedSearchBox)`
   display: flex;
   flex-direction: row-reverse;
   align-items: center;

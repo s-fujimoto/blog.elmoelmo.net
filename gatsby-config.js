@@ -2,8 +2,8 @@ module.exports = {
   siteMetadata: {
     title: `チリツモ`,
     author: {
-      name: `えるも`,
-      summary: `からあげおいしい`,
+      name: `s-fujimoto`,
+      summary: `https://github.com/s-fujimoto/blog.elmoelmo.net`,
     },
     description: `明日の自分を強くする。少しづつ積み重ねる。`,
     siteUrl: `https://blog.elmoelmo.net/`,

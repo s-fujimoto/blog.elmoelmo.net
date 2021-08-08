@@ -3,7 +3,7 @@
   "private": true,
   "description": "elmo tech blog",
   "version": "0.1.0",
-  "author": "s-fujimoto <a04316@gmail.com>",
+  "author": "s-fujimoto",
   "dependencies": {
     "@styled-icons/fa-solid": "^10.34.0",
     "algoliasearch": "^4.9.3",

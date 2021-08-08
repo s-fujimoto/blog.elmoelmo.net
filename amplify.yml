@@ -3,7 +3,9 @@ frontend:
   phases:
     preBuild:
       commands:
-        - yum install -y jq
+        - nvm install $(cat .node-version)
+        - nvm use $(cat .node-version)
+        - npm install -g yarn
         - yarn install
     build:
       commands:

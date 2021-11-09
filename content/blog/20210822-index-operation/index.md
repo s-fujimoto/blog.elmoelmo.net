@@ -179,7 +179,7 @@ curl \
     -XPOST \
     "https://${APPLICATION_ID}.algolia.net/1/indexes/${INDEX}/query" \
     -d'{
-      "params": "query=ブログ"
+      "params": "query=gatsby"
     }'
 ```
 
@@ -189,41 +189,43 @@ curl \
 {
   "hits": [
     {
-      "title": "ブログはじめました",
-      "content": "algolia を勉強してみたくて、algolia を使ったブログを作ってみました",
-      "objectID": "1",
+      "title": "gatsby-starter-blog を使ってブログを立ち上げる",
+      "content": "このサイトは gatsby-starter-blog を利用して構築した",
+      "objectID": "2",
       "_highlightResult": {
         "title": {
-          "value": "<em>ブログ</em>はじめました",
+          "value": "<em>gatsby</em>-starter-blog を使ってブログを立ち上げる",
           "matchLevel": "full",
           "fullyHighlighted": false,
           "matchedWords": [
-            "ブログ"
+            "gatsby"
           ]
         },
         "content": {
-          "value": "algolia を勉強してみたくて、algolia を使った<em>ブログ</em>を作ってみました",
+          "value": "このサイトは <em>gatsby</em>-starter-blog を利用して構築した",
           "matchLevel": "full",
           "fullyHighlighted": false,
           "matchedWords": [
-            "ブログ"
+            "gatsby"
           ]
         }
       }
-    },
-    ...
+    }
   ],
-  "nbHits": 2,
+  "nbHits": 1,
   "page": 0,
   "nbPages": 1,
   "hitsPerPage": 20,
   "exhaustiveNbHits": true,
   "exhaustiveTypo": true,
-  "query": "ブログ",
-  "params": "query=%E3%83%96%E3%83%AD%E3%82%B0",
+  "query": "gatsby",
+  "params": "query=gatsby",
   "renderingContent": {},
   "processingTimeMS": 1
 }
 ```
 
 # まとめ
+
+API を通してインデックスにオブジェクトを登録、インデックスからオブジェクトを検索しました。
+UI でなく、raw データを見ることで理解が進みます。

@@ -1,10 +1,11 @@
-import React from "react"
+import React from "react";
+import Layout from "../components/layout";
 
 
 const EmptyPage = () => (
-  <main>
+  <Layout location="empty" title="empty page">
     <h2 data-count="0">ヒットしませんでした</h2>
-  </main>
+  </Layout>
 )
 
 export default EmptyPage

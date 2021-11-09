@@ -4,7 +4,7 @@ import Layout from "../components/layout";
 
 const HitsPage = () => (
   <Layout location="empty" title="empty page">
-    <h2 data-count="2">2件ヒットしました</h2>
+    <h2 id="search-result" data-count="2">2件ヒットしました</h2>
     <ul>
       <li>けっか１</li>
       <li>けっか２</li>

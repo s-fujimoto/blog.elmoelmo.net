@@ -5,7 +5,7 @@ import {
   Highlight,
   Hits,
   Index,
-  Snippet,
+  Snippet
 } from "react-instantsearch-dom"
 
 const HitCount = connectStateResults(({ searchResults }) => {
@@ -19,7 +19,11 @@ const HitCount = connectStateResults(({ searchResults }) => {
 })
 
 const PageHit = ({ hit }) => (
-  <div>
+  <div
+    data-insights-object-id={hit.objectID}
+    data-insights-position={hit.__position}
+    data-insights-query-id={hit.__queryID}
+  >
     <Link to={hit.slug}>
       <h4>
         <Highlight attribute="title" hit={hit} tagName="mark" />

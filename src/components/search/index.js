@@ -23,10 +23,6 @@ export default function Search({ indices }) {
   )
 
   useClickOutside(rootRef, () => setFocus(false))
-  var clientId;
-  ga(function(tracker) {
-    clientId = tracker.get('clientId');
-  });
 
   return (
     <ThemeProvider theme={theme}>
@@ -38,7 +34,7 @@ export default function Search({ indices }) {
         >
           <Configure 
             clickAnalytics={true}
-            userToken={clientId}
+            userToken={'user001'}
           />
           <StyledSearchBox onFocus={() => setFocus(true)} hasFocus={hasFocus} />
           <StyledSearchResult

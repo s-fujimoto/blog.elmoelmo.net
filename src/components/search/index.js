@@ -1,6 +1,6 @@
 import algoliasearch from "algoliasearch/lite"
 import { createRef, default as React, useState } from "react"
-import { InstantSearch } from "react-instantsearch-dom"
+import { Configure, InstantSearch } from "react-instantsearch-dom"
 import { ThemeProvider } from "styled-components"
 import StyledSearchBox from "./styled-search-box"
 import StyledSearchResult from "./styled-search-result"
@@ -23,6 +23,10 @@ export default function Search({ indices }) {
   )
 
   useClickOutside(rootRef, () => setFocus(false))
+  var clientId;
+  ga(function(tracker) {
+    clientId = tracker.get('clientId');
+  });
 
   return (
     <ThemeProvider theme={theme}>
@@ -32,6 +36,10 @@ export default function Search({ indices }) {
           indexName={indices[0].name}
           onSearchStateChange={({ query }) => setQuery(query)}
         >
+          <Configure 
+            clickAnalytics={true}
+            userToken={clientId}
+          />
           <StyledSearchBox onFocus={() => setFocus(true)} hasFocus={hasFocus} />
           <StyledSearchResult
             show={query && query.length > 0 && hasFocus}

@@ -1,12 +1,13 @@
-import { Link } from "gatsby"
-import { default as React } from "react"
+import { Link } from "gatsby";
+import { default as React } from "react";
 import {
-  connectStateResults,
-  Highlight,
+  connectHitInsights, connectStateResults, Highlight,
   Hits,
   Index,
   Snippet
-} from "react-instantsearch-dom"
+} from "react-instantsearch-dom";
+import aa from 'search-insights';
+
 
 const HitCount = connectStateResults(({ searchResults }) => {
   const hitCount = searchResults && searchResults.nbHits
@@ -18,13 +19,17 @@ const HitCount = connectStateResults(({ searchResults }) => {
   ) : null
 })
 
-const PageHit = ({ hit }) => (
+const PageHit = ({ hit, insights }) => (
   <div
     data-insights-object-id={hit.objectID}
     data-insights-position={hit.__position}
     data-insights-query-id={hit.__queryID}
   >
-    <Link to={hit.slug}>
+    <Link to={hit.slug} onClick={() =>
+      insights('clickedObjectIDsAfterSearch', {
+        eventName: 'PageClicked'
+      })
+    }>
       <h4>
         <Highlight attribute="title" hit={hit} tagName="mark" />
       </h4>
@@ -33,10 +38,12 @@ const PageHit = ({ hit }) => (
   </div>
 )
 
+const HitWithInsights = connectHitInsights(aa)(PageHit);
+
 const HitsInIndex = ({ index }) => (
   <Index indexName={index.name}>
     <HitCount />
-    <Hits className="Hits" hitComponent={PageHit} />
+    <Hits className="Hits" hitComponent={HitWithInsights} />
   </Index>
 )
 
